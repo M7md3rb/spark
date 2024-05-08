@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- all copyright saved by : 3.rb. | جميع حقوق محفوظه ل (3.rb.) -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="icon" type="image/png" href="https://media.discordapp.net/attachments/1167018559516454952/1167219179531817030/system.png?ex=654d5492&is=653adf92&hm=61e82c5a99e72b1eb29f0bed520a6fc9d80d2ea60d9d47737b0ae31d49606971&=&width=432&height=432">
+    <style>
+        /* <!-- all copyright saved by : 3.rb. | جميع حقوق محفوظه ل (3.rb.) --> */
+        body{
+            background-image: url(/src/img/back.webp);
+            background-size: cover;
+        }
+        .nativ a {
+position: relative;
+font-size: 1.1em;
+text-decoration: none;
+font-weight: 500;
+margin-left: 40px;
+}
+     .nativ a::after{
+    content: '';
+    left: 0;
+    bottom: -6px;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: rgb(4, 174, 174);
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+.nativ a:hover:after{
+    transform: scaleX(1);
+}
+#hhh{
+    width: 100%;
+}
+#img_close{
+    position: absolute;
+    z-index: 1;
+}
+    </style>
+    <title>Login</title>
+</head>
+
+<body class="">
+    <!-- all copyright saved by : 3.rb. | جميع حقوق محفوظه ل (3.rb.) -->
+    <nav id="navv" class=" bg-white mx-auto p-3 shadow-md">
+        <div class="container flex justify-between items-center mx-auto">
+            <h2 class="text-slate-500 font-semibold text-xl"><a href="/index.html" class="hover:text-cyan-500 ">Spark</a></h2>
+            <div class=" nativ hidden md:flex text-slate-500 space-x-4">
+                <a href="/shop2.html" class="hover:text-cyan-500 " >Shop</a>
+                <a href="#" class="hover:text-cyan-500  ">Dashpord</a>
+                <a href="/تشهير.html" class="hover:text-cyan-500  ">Tshher</a>
+                <a href="#" class="hover:text-cyan-500  ">Support</a>
+            </div>
+            <div class="user-info flex ">
+                <div class="username text-slate-500">${UserData.username}</div>
+                <img class="rounded-full " src="https://cdn.discordapp.com/avatars/${UserData.id}/${UserData.avatar}.png" width="54">
+             </div>
+        </div>
+    </nav>
+    <!-- all copyright saved by : 3.rb. | جميع حقوق محفوظه ل (3.rb.) -->
+    <div class="flex justify-center item-center mt-16 h-98 ">
+        <div class="w-96 p-6 shadow-lg bg-white rounded-md ">
+            <h1 class="text-3xl block text-center font-bold">  Report</h1>
+            <hr class="mt-3 ">
+            <div class="mt-3">
+                <label for="username" class="block tex-base mb-2">Your id</label>
+                <input type="text" id="username" class="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600" placeholder="Enter your id" />
+            </div>
+            <div class="mt-3">
+                <label for="password" class="block tex-base mb-2">Aln9ab id</label>
+                <input type="password" id="password" class="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600" placeholder="Enter his id" />
+            </div>
+            <div class="mt-3">
+                <label for="userId" class="block tex-base mb-2">Story</label>
+                <input type="text" id="userId" class="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600" placeholder="Enter the story" />
+            </div>
+            <div class="mt-3">
+                <label for="userId" class="block tex-base mb-2">Amount</label>
+                <input type="text" id="userId" class="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600" placeholder="Enter the amount" />
+            </div>
+            <!-- all copyright saved by : 3.rb. | جميع حقوق محفوظه ل (3.rb.) -->
+            <div class="mt-3 flex-col  items-center">
+              <p>ارفق دليل النصب والتحويل والاتفاق:</p>
+              <input name="image[]" id="image" type="file"  multiple="multiple" accept="image/*" onchange="readURL(this);" >
+              <div id="hhh" class="flex justify-between items-center mt-3 ">
+                <div class=" flex items-end justify-center">
+                    <a id="img_close" class="flex transition-all hover:text-cyan-500 items-end justify-center" href="#"><i class="fa-solid fa-xmark"></i></a>
+                    <img id="blah" src="#" alt="" />
+                </div>
+                <div class=" flex items-end justify-center">
+                    <a id="img_close" class="flex transition-all hover:text-cyan-500 items-end justify-center" href="#"><i class="fa-solid fa-xmark"></i></a>
+                    <img id="blah1" src="#" alt="" />
+                </div>
+                <div class=" flex items-end justify-center">
+                    <a id="img_close" class="flex transition-all hover:text-cyan-500 items-end justify-center" href="#"><i class="fa-solid fa-xmark"></i></a>
+                    <img id="blah2" src="#" alt="" />
+                </div>
+                <div class=" flex items-end justify-center">
+                    <a id="img_close" class="flex transition-all hover:text-cyan-500 items-end justify-center" href="#"><i class="fa-solid fa-xmark"></i></a>
+                    <img id="blah3" src="#" alt="" />
+                </div>
+                <!-- <img id="blah" src="#" alt="" />  -->
+                <!-- <img id="blah1" src="#" alt="" />
+                <img id="blah2" src="#" alt="" />
+                <img id="blah3" src="#" alt="" /> -->
+              </div>
+            </div>
+            <hr class="mt-3 ">
+            <div class="mt-3 flex justify-between item-center ">
+                <div>
+                    <input type="checkbox" >
+                    <label>اطلاع على تحديثات القضيه </label>
+                </div>
+                
+            </div>
+            <!-- all copyright saved by : 3.rb. | جميع حقوق محفوظه ل (3.rb.) -->
+            <div class="mt-5">
+                <button type="button" class="border-2 border-cyan-500 bg-cyan-500 text-white py-1 w-full rounded-md hover:bg-transparent hover:bg-cyan-500 hover:text-cyan-500 font-semibold ">ارسال</button>
+            </div>
+            <!-- <p class="text-gray flex justify-between item-center">OR</p> -->
+            
+           
+        </div>
+    </div>
+    <!-- all copyright saved by : 3.rb. | جميع حقوق محفوظه ل (3.rb.) -->
+    <footer class="bg-cyan-500 mt-16">
+        <div class="container flex flex-row w-screen h-44">
+            <div class="hidden md:flex justify-center items-center ml-8 pt-8 w-4 md:w-24 ">
+                <a href="#navv"><img src="" alt="spark logo" class=" rounded-full"></a>
+             </div>
+            <div class="ml-10 flex flex-col m-14 space-y-8 items-center text-white">
+                <div class="flex font-bold space-x-6 md:space-x-14">
+                    <a href="">سياسه الخصوصيه</a>
+                    <a href="">قوانين البيع والشراء</a>
+                </div>
+                <div class="">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod quis nulla iste 
+                        enim provident quia commodi! Exercitationem ad reprehenderit odio.</p>
+                </div>
+            </div>
+            <!-- all copyright saved by : 3.rb. | جميع حقوق محفوظه ل (3.rb.) -->
+            <div class="flex flex-row mb-28 ml-42 mt-8 space-x-6">
+                <a href=""><i class="fa-brands fa-discord" style="color: #ffffff;"></i></a>
+                <a href=""><i class="fa-solid fa-gavel  hover:text-primary-700" style="color: #ffffff;"></i></a>
+
+            </div>
+        </div>
+    </footer>
+    <!-- all copyright saved by : 3.rb. | جميع حقوق محفوظه ل (3.rb.) -->
+    <script>
+        const img_close = document.querySelector("#img_close");
+        $("#image").on("change", function() {
+    if ($("#image")[0].files.length > 4) {
+        alert("يجب ارفاق 4 صور فقط");
+    } else {
+        $("#imageUploadForm").submit();
+    }
+});
+
+function readURL(input) {
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+      $('#blah').attr('src', e.target.result).width(80).height(90);
+      
+    };
+
+    reader.readAsDataURL(input.files[0]);
+  }
+  if (input.files && input.files[1]) {
+    var reader = new FileReader();
+
+    reader.onload = function (f) {
+      $('#blah1').attr('src', f.target.result).width(80).height(90);
+      
+    };
+
+    reader.readAsDataURL(input.files[1]);
+  }
+  if (input.files && input.files[2]) {
+    var reader = new FileReader();
+
+    reader.onload = function (a) {
+      $('#blah2').attr('src', a.target.result).width(80).height(90);
+      
+    };
+    // <!-- all copyright saved by : 3.rb. | جميع حقوق محفوظه ل (3.rb.) -->
+
+    reader.readAsDataURL(input.files[2]);
+  }
+  if (input.files && input.files[3]) {
+    var reader = new FileReader();
+
+    reader.onload = function (w) {
+      $('#blah3').attr('src', w.target.result).width(80).height(90);
+      
+    };
+
+    reader.readAsDataURL(input.files[3]);
+  }
+}
+// function readURL(input) {
+//   if (input.files && input.files[1]) {
+//     var reader = new FileReader();
+
+//     reader.onload = function (e) {
+//       $('#blah1').attr('src', e.target.result).width(100).height(80);
+      
+//     };
+
+//     reader.readAsDataURL(input.files[1]);
+//   }
+// }
+
+
+    </script>
+    <!-- all copyright saved by : 3.rb. | جميع حقوق محفوظه ل (3.rb.) -->
+</body>
+
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   
+    <link rel="icon" type="image/png" href="https://media.discordapp.net/attachments/1167018559516454952/1167219179531817030/system.png?ex=654d5492&is=653adf92&hm=61e82c5a99e72b1eb29f0bed520a6fc9d80d2ea60d9d47737b0ae31d49606971&=&width=432&height=432">
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/tw-elements.min.css" />
+<script src="https://cdn.tailwindcss.com/3.3.0"></script>
+    <script>
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            fontFamily: {
+              sans: ["Roboto", "sans-serif"],
+              body: ["Roboto", "sans-serif"],
+              mono: ["ui-monospace", "monospace"],
+            },
+          },
+          corePlugins: {
+            preflight: false,
+          },
+        };
+      </script>
+    <title>Spark Shop</title>
+    <style>  
+        main {
+            margin: 20px;
+        }
+    
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+    
+        .product-card {
+            width: 300px;
+            height: 400px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+    
+        .product-card:hover {
+            transform: scale(1.02);
+        }
+    
+        .product-card img {
+            width: 100%;
+            max-height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+    
+        .product-card .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            opacity: 0; 
+            transition: opacity 0.3s ease-in-out; 
+        }
+    
+        .product-card .button-container button {
+            background-color: #564caf; 
+            color: #fff;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            cursor: pointer;
+        }
+    
+        .product-card:hover .button-container {
+            opacity: 1; 
+        }
+        .side{
+            position: fixed;
+        }
+    
+    </style>
+</head>
+<body  class=" bg-indigo-800">
+    <div class="flex">
+    <nav class=" side flex flex-col  h-screen w-14 md:w-20 ">
+        <div class="text-white font-bold bg-black space-y-14 rounded-md h-screen w-14 md:w-20">
+            <div class=" px-4 text-2xl flex item-center justify-center mt-5">
+                <a href="#"><i class="fa-solid fa-bars"></i></a>
+            </div>
+            <div class=" px-4 text-2xl flex item-center justify-center mt-5">
+                <a href="#"><i class="fa-solid fa-house" style="color: #ffffff;"></i></a>
+            </div>
+            <div class=" px-4 text-2xl flex item-center justify-center mt-5">
+                <a href="#"><i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i></a>
+            </div>
+            <div class=" px-4 text-2xl flex item-center justify-center mt-5">
+                <a href="#"><i class="fa-solid fa-user" style="color: #ffffff;"></i></a>
+            </div>
+            <div class=" px-4 text-2xl flex item-center justify-center mt-5">
+                <a href="#"><i class="fa-solid fa-shop" style="color: #ffffff;"></i></a>
+            </div>
+            <div class=" px-4 text-2xl flex item-center justify-center mt-5">
+                <a href="#"><i class="fa-brands fa-discord" style="color: #ffffff;"></i></a>
+            </div>
+            <div class=" px-4 text-2xl flex item-center justify-center mt-5">
+                <a href="#"><i class="fa-solid fa-right-from-bracket" style="color: #ffffff;"></i></a>
+            </div>
+        </div>
+    </nav>
+    <nav class=" w-screen h-16 bg-primary-900  px-6 py-2  shadow-xl">
+        <div class="text-white font-bold flex  item-center justify-between">
+            <div class=" flex items-center space-x-2 ml-10 md:ml-14">
+            <img src="" alt="Spark logo" width="54">
+            <h2 class="mx-3 md:text-2xl"><a href="#">Spark Shop</a></h2>
+          </div>
+          <div class="user-info items-center space-x-3 flex">
+            <div class="username">${UserData.username}</div>
+            <img class="rounded-full " src="https://cdn.discordapp.com/avatars/${UserData.id}/${UserData.avatar}.png" width="54">
+         </div>
+        </div>
+        <div id="search" class="pt-16">
+            <form action="" class="w-full max-w-md  mx-auto"> <!--w-max-->
+                <div class=" w-82 relative flex item-center text-white focus:within:text-gray-800">
+                <i class="fa-solid fa-magnifying-glass w-5 h-5 absolute mt-3 ml-3 pointer-events-none" style="color: #ffffff;"></i>
+                <input type="text" name="search" placeholder="Search talk" autocomplete="off" aria-label="Search talk" class="w-full pr-3 pl-10 px-3  py-2 font-semibold placeholder-gray-600 text-black rounded-2xl bg-indigo-900 border-none ring-2 ring-indigo-700 focus:ring-2">
+                <!-- <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i> -->
+            </div>
+            </form>
+        </div>
+         
+        <!-- <section id="author">
+
+            <div class=" bg-white    h-98 text-center">
+                <div class="mt-10 flex flex-col md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-5">
+                    <div class=" md:w-1/3 flex flex-col p-6 space-y-2 rounded-lg border border-slate-800 items-center bg-slate-700">
+                        <img src="/dist/images/undraw_selection_re_ycpo.svg" alt="" class=" w-32">
+                        <h5 class="font-bold text-lg text-white "></h5>
+                        <h6 class="text-white"></h6>
+                    </div>
+                     <div class=" c1 md:w-1/3 flex flex-col p-6 space-y-2 rounded-lg border border-slate-800 items-center bg-slate-700">
+                        <img src="https://images-ext-2.discordapp.net/external/7gFUlw8vFC_ukNaODqhxln38bgpG40zqSyOa22mlp9M/%3Fsize%3D2048/https/cdn.discordapp.com/icons/906316528121692240/a_10ab5326cd0edda8a5c8df2bdb3600ae.gif" alt="King Server" class="hhh rounded-full w-16">
+                        <h5 class="font-bold text-lg text-white ">Haland S</h5>
+                        <h6 class="text-white">Members: 24622</h6>
+                    </div>
+
+                    <div class=" c1 md:w-1/3 flex flex-col p-6 space-y-2 rounded-lg border border-slate-800 items-center bg-slate-700">
+                        <img src="https://media.discordapp.net/attachments/1038726718023811092/1167524634455978074/na7labank.png.webp?ex=654e710c&is=653bfc0c&hm=8d475d783d8284f7e3d58fdf5e4120c46709c86cfb483f219bc3355533193884&=&width=599&height=599" alt="Na7la S" class="hhh rounded-full w-16">
+                        <h5 class="font-bold text-lg text-white ">Na7la S</h5>
+                        <h6 class="text-white">Members: 6229</h6>
+                    </div>
+
+                    <div class=" c1 md:w-1/3 flex flex-col p-6 space-y-2 rounded-lg border border-slate-800 items-center bg-slate-700">
+                        <img src="https://media.discordapp.net/attachments/1155552602923208766/1167177756505800705/96f32017843f1c973914431998287ddf.png?ex=654d2dfe&is=653ab8fe&hm=bd6ecf5e23b8b50818ff278b203171f427b6dce6d8386399e64c05d8ea4ec46a&=" alt="Security" class="hhh rounded-full w-16">
+                        <h5 class="font-bold text-lg text-white ">Security</h5>
+                        <h6 class="text-white">Members: 8077</h6>
+                    </div>
+
+                    
+                </div>
+            </div>
+        </section> -->
+         <main>
+        <div class="product-list">
+           
+                <div class="product-card">
+                    <img src="<%= product.LinkPhoto %>" alt="<%= product.Title %>">
+                    <h2><%= product.Title %></h2>
+                    <p><%= product.Description %></p>
+                    <div class="button-container">
+                        <button onclick="redirectToProduct('<%= product.Title %>')">عرض المنتج</button>
+                    </div>
+                </div>
+           
+                <div class="product-card">
+                    <img src="<%= product.LinkPhoto %>" alt="<%= product.Title %>">
+                    <h2><%= product.Title %></h2>
+                    <p><%= product.Description %></p>
+                    <div class="button-container">
+                        <button onclick="redirectToProduct('<%= product.Title %>')">عرض المنتج</button>
+                    </div>
+                </div>
+            
+                <div class="product-card">
+                    <img src="<%= product.LinkPhoto %>" alt="<%= product.Title %>">
+                    <h2><%= product.Title %></h2>
+                    <p><%= product.Description %></p>
+                    <div class="button-container">
+                        <button onclick="redirectToProduct('<%= product.Title %>')">عرض المنتج</button>
+                    </div>
+                </div>
+               
+                    <div class="product-card">
+                        <img src="<%= product.LinkPhoto %>" alt="<%= product.Title %>">
+                        <h2><%= product.Title %></h2>
+                        <p><%= product.Description %></p>
+                        <div class="button-container">
+                            <button onclick="redirectToProduct('<%= product.Title %>')">عرض المنتج</button>
+                        </div>
+                    </div>
+               
+                    <div class="product-card">
+                        <img src="<%= product.LinkPhoto %>" alt="<%= product.Title %>">
+                        <h2><%= product.Title %></h2>
+                        <p><%= product.Description %></p>
+                        <div class="button-container">
+                            <button onclick="redirectToProduct('<%= product.Title %>')">عرض المنتج</button>
+                        </div>
+                    </div>
+                
+                    <div class="product-card">
+                        <img src="<%= product.LinkPhoto %>" alt="<%= product.Title %>">
+                        <h2><%= product.Title %></h2>
+                        <p><%= product.Description %></p>
+                        <div class="button-container">
+                            <button onclick="redirectToProduct('<%= product.Title %>')">عرض المنتج</button>
+                        </div>
+                    </div>
+               
+                    <div class="product-card">
+                        <img src="<%= product.LinkPhoto %>" alt="<%= product.Title %>">
+                        <h2><%= product.Title %></h2>
+                        <p><%= product.Description %></p>
+                        <div class="button-container">
+                            <button onclick="redirectToProduct('<%= product.Title %>')">عرض المنتج</button>
+                        </div>
+                    </div>
+               
+           
+        </div>
+    </main>
+        <!-- <section class="container bg-black mt-16 w-98 h-screen">
+            <div class="flex flex-col item-center justify-center space-y-5">
+                <div class="bg-white w-64 h-96">
+                    <img src="" alt="">
+                    <h3>sdcds</h3>
+                    <h5>sdcd</h5>
+                    <h6>dscd</h6>
+                </div>
+                <div class="bg-white w-64 h-96">
+                    <img src="" alt="">
+                    <h3>sdcds</h3>
+                    <h5>sdcd</h5>
+                    <h6>dscd</h6>
+                </div>
+            </div>
+        </section> -->
+
+
+    </nav>
+</div>
+</body>
+</html>
